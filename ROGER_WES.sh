@@ -67,13 +67,15 @@ if [[ -e $ref && -e $bam && -e $bed ]] ; then
         fi
 # read names unique in file and extract BAM corresponds to paired-end reads to be extracted
 	samtools view -hb -F 2316 ${out}_extracted_reads.bam | samtools sort -@ ${THREAD} -n -  > ${out}_extracted_reads.sort.bam 
-	samtools view ${out}_extracted_reads.sort.bam  | cut -f1 | uniq -c | awk '$1==1 {print $2}' > ${out}_nonpairs_rnames.txt
+	#samtools view ${out}_extracted_reads.sort.bam  | cut -f1 | uniq -c | awk '$1==1 {print $2}' > ${out}_nonpairs_rnames.txt
+	samtools view ${out}_extracted_reads.sort.bam  | cut -f1 | uniq -c | awk '$1!=2 {print $2}' > ${out}_nonpairs_rnames.txt
 	samtools view -Sh ${out}_extracted_reads.sort.bam | fgrep -vf ${out}_nonpairs_rnames.txt | samtools view -hb - > ${out}_pairs_only.bam 
         samtools sort -o ${out}_original.sorted.bam ${out}_pairs_only.bam
-        samtools index ${out}_original.sorted.bam
+        #samtools index ${out}_original.sorted.bam
 	echo -e "\tCovert reads to fastq"
 # extract the paired-end reads
-	samtools bam2fq -@ ${THREAD} ${out}_pairs_only.bam -1 ${out}_extract_1.fastq -2 ${out}_extract_2.fastq -0 ${out}_single.fastq
+	#samtools bam2fq -@ ${THREAD} ${out}_pairs_only.bam -1 ${out}_extract_1.fastq -2 ${out}_extract_2.fastq -0 ${out}_single.fastq
+	samtools fastq -@ ${THREAD} ${out}_original.sorted.bam -1 ${out}_extract_1.fastq -2 ${out}_extract_2.fastq -0 /dev/null -s /dev/null -n
 	samtools view -H ${out}_extracted_reads.bam | grep "^@RG"| sed 's/	/\\t/g'  > ${out}_bug_regions.RG.txt
 
 	echo -e "\tStart remapping"
