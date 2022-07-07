@@ -5,7 +5,7 @@ This is a script and resources to realigning short paired-end reads across medic
 
 
 ## Running the script
-To run the script you need a modified [GRCH38 reference from here](https://bcm.box.com/s/xi95ahgzrw86pvogm7sdwl0ppn49i5dn). Furthermore use the bed file in this repository. The script assumes a global installation of `samtools` and `bwa`. Furthermore have the reference index for `bwa` (see [bwa index](http://bio-bwa.sourceforge.net/bwa.shtml))  at the same location as the reference! 
+To run the script you need a modified [GRCH38 reference from here](https://bcm.box.com/s/xi95ahgzrw86pvogm7sdwl0ppn49i5dn). Furthermore use the bed file in this repository (add +/- 5kbp flanking regions). The script assumes a global installation of `samtools` and `bwa`. Furthermore have the reference index for `bwa` (see [bwa index](http://bio-bwa.sourceforge.net/bwa.shtml))  at the same location as the reference! 
 
     sh extract_remap.sh -b <BAM> -r <Reference_with_decoy> -d <bed_regions> -o <out_prefix>
     
