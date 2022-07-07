@@ -11,7 +11,7 @@ To run the script you need a modified [GRCH38 reference from here](https://bcm.b
     
  If CRAM file is used instead of BAM, then it is required to use the [old reference](https://bcm.box.com/s/ym4x3z61ib4okbguy7zn8lre8uo6mcxz) in the script with `-f` parameter.
  
-    sh extract_remap.sh -b <CRAM> -r <Reference_with_decoy> -d <bed_regions> -f <old_reference> -o <out_prefix>
+    sh [Short/Long]ReadRemap.sh -b <CRAM> -r <Reference_with_decoy> -d <bed_regions> -f <old_reference> -o <out_prefix>
     
  To run with multiple threads, use `-t <no_threads>`
     
