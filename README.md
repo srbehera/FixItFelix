@@ -1,5 +1,5 @@
 # FixItFelix: Fixing GRCh38 bugs
-Investigation of collapsed and duplicate regions in the HG38 reference sequence
+Investigation of collapsed and duplicated regions in the GRCh38 (known as `hg38`) reference sequence
 
 This is a script and resources to realigning short paired-end reads across medical relevant but challenging regions. The bed file holds the regional coordinates from GRCh38 regions that are either wrongly duplicated or collapsed. As such these errors impact ~4.1Mbp of sequence that can be improved using this remapping step.
 
