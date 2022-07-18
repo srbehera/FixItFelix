@@ -17,7 +17,9 @@ To run the script you need a modified [GRCh38 reference from here](https://bcm.b
  To run with multiple threads, use `-t <no_threads>`
  
  For RNA-Seq datase,
-    -b <BAM> -r <Modified_GRCh38_Ref> -o <out_prefix>
+ 
+    RNASeqRemap.sh -b <BAM> -r <Modified_GRCh38_Ref> -o <out_prefix>
+    
 ## Output
 
     <out_prefix>_original.sorted.bam <- Sorted BAM files corresponds to the extracted paired-end reads (original mapping)"
