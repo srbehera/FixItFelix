@@ -12,10 +12,12 @@ To run the script you need a modified [GRCh38 reference from here](https://bcm.b
     
  If CRAM file is used instead of BAM, then it is required to use the [original GRCh38 reference](https://bcm.box.com/s/ym4x3z61ib4okbguy7zn8lre8uo6mcxz) in the script with `-f` parameter.
  
-    [Short/Long]ReadRemap.sh -b <CRAM> -r <Modified_GRCh38_Ref> -d <bed_regions> -f <Original_GRCh38_Ref> -o <out_prefix>
+    [Short/Long]ReadRemap.sh -b <BAM> -r <Modified_GRCh38_Ref> -d <bed_regions> -f <Original_GRCh38_Ref> -o <out_prefix>
     
  To run with multiple threads, use `-t <no_threads>`
-    
+ 
+ For RNA-Seq datase,
+    -b <BAM> -r <Modified_GRCh38_Ref> -o <out_prefix>
 ## Output
 
     <out_prefix>_original.sorted.bam <- Sorted BAM files corresponds to the extracted paired-end reads (original mapping)"
