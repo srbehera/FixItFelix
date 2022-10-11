@@ -4,7 +4,7 @@
 
 THREAD=1 #set number of threads Maybe later over parameter!? 
 
-usage="sh script.sh [-h] [-b -d -r -o] -- script to extract the reads from the given bed regions and remapping them to reference with decoy sequences
+usage="sh ShortReadRemap.sh [-h] [-b -d -r -o] -- script to extract the reads from the given bed regions and remapping them to reference with decoy sequences
 
 where:
     -h  show this help text
