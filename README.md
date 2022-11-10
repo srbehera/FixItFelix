@@ -23,5 +23,5 @@ To run the script you need a modified [GRCh38 reference from here](https://bcm.b
     
 ## Output
 
-    <out_prefix>_original.sorted.bam <- Sorted BAM files corresponds to the extracted paired-end reads (original mapping)"
-    <out_prefix>_remapped.sorted.bam <- Sorted bam file after BWA MEM step i.e. re-mapping of extracted reads to GRCh38 masked v2 reference (final output)"
+    <out_prefix>_original_sorted.bam <- Sorted BAM files corresponds to the extracted paired-end reads (Original mapping)"
+    <out_prefix>_remapped_sorted.bam <- Sorted bam file after BWA MEM step i.e. re-mapping of extracted reads to modified GRCh38 reference (final output)"
