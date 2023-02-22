@@ -25,6 +25,6 @@ To run the script you need a modified [GRCh38 reference from here](https://bcm.b
 
 The scripts produce following two output file 
     1. <out_prefix>_original_sorted.bam <- Sorted BAM files corresponds to the extracted paired-end reads (Original mapping)"
-    2. <out_prefix>_remapped_sorted.bam <- Sorted bam file after BWA MEM step i.e. re-mapping of extracted reads to modified GRCh38 reference (final output)"
+    2. <out_prefix>_remapped_sorted.bam <- Sorted bam file after BWA MEM step i.e. re-mapping of extracted reads to modified GRCh38 reference (final output)" 
     
 The above two BAM files are corresponding to the BED regions as it realigns only the regions that are impacted due to falsely duplicated or collapsed errors. For getting a BAM file for the whole genome, it needs to be merged with the mapping of unaffected regions. The current version of the script does not have a merging step at the end.
